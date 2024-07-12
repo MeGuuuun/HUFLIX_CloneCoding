@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUFLIX :: identity</title>
+  <link rel="stylesheet" href="./css/identity.css">
+  <script>
+    
+    //전체동의 체크박스
+    window.addEventListener('DOMContentLoaded', (event) => {
+      
+      function checkAllCheckboxes() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+          checkbox.checked = true;
+        });
+      }
+
+      var checkAllCheckbox = document.querySelector('.input-check-head input[type="checkbox"]');
+      checkAllCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          checkAllCheckboxes();
+        } else {
+          
+          var checkboxes = document.querySelectorAll('.input-check-comment input[type="checkbox"]');
+          checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+          });
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="head-wrapper">
+      <div class="head-image">
+        <img src="./icon/pass.PNG">
+      </div>
+    
+      <div class="head-comment">
+        <p>이용 중이신 통신사를 선택해 주세요.</p>
+      </div>
+
+      <div class="telecom">
+        <img src="./icon/tell.PNG">
+      </div>
+    </div>
+    <div class="input-check">
+      <div class="input-check-head">
+        <input type="checkbox">전체 동의
+      </div>
+      <div class="input-check-comment">
+        <div class="input-check-first">
+          <input type="checkbox">개인정보이용 동의
+          <input type="checkbox">서비스이용약관 동의
+        </div>
+        <div class="input-check-second">
+          <input type="checkbox">고유식별정보처리 동의
+          <input type="checkbox">통신사이용약관 동의
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-pass">
+        <button type="button" id="btnSubmit" disabled>PASS로 인증하기</button>
+      </div>
+      <div class="footer-sms">
+        <button type="button" id="btnSubmit2" disabled>문자(SMS)로 인증하기</button>
+      </div>
+    </div>
+    <div class="footBar">
+      <img src="./icon/footbar.PNG">
+    </div>
+  </div>
+</body>
+</html>

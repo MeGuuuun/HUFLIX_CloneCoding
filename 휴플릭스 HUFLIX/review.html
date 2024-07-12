@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/review.css">
+        <title>HUFLIX :: review</title>
+
+        <script src="./jquery-1.11.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.program .star_rating .star').click(function(){
+                    $(this).parent().children('.star').removeClass('on');
+                    $(this).addClass('on').prevAll('.star').addClass('on');
+                    $(this).parent().nextAll('.program').find('.star').removeClass('on');
+                });
+            });
+
+            function showModal(modalId){
+                var modal = document.getElementById(modalId);
+                modal.style.display = "block";
+            }
+
+            function hideModal(modalId){
+                var modal = document.getElementById(modalId);
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                var modal = document.getElementById("modalWrap");
+                var modal2 = document.getElementById("modalWrap2");
+                var modal3 = document.getElementById("modalWrap3");
+                
+                if(event.target == modal){
+                    hideModal("modalWrap");
+                } else if(event.target == modal2){
+                    hideModal("modalWrap2");
+                } else if(event.target == modal3){
+                    hideModal("modalWrap3");
+                } 
+
+            };
+
+
+            function show(){
+                alert("리뷰가 등록되었습니다.");
+                document.querySelectorAll('textarea[class="review"]').forEach(function(textarea){
+                    textarea.value = '';
+                });
+            }
+
+            function openModal(modalId) {
+                var modal = document.getElementById(modalId);
+                modal.style.display = "block";
+
+                if(modal.classList.contains('on')) {
+                    modal.classList.remove('on');
+                } else modal.classList.add('on');
+            }
+
+
+            function showDropdownMenu() {
+                var dropdownContent = document.getElementById("dropdownContent");
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            }
+
+            function showDropdownMenu1() {
+                var dropdownContent1 = document.getElementById("dropdownContent1");
+                if (dropdownContent1.style.display === "block") {
+                    dropdownContent1.style.display = "none";
+                } else {
+                    dropdownContent1.style.display = "block";
+                }
+            }
+
+            window.onclick = function(event) {
+                var dropdownContent = document.getElementById("dropdownContent");
+                var dropdownContent1 = document.getElementById("dropdownContent1");
+
+                if (!event.target.matches('.option')) {
+                    dropdownContent.style.display = "none";
+                }
+                if (!event.target.matches('.profile')) {
+                    dropdownContent1.style.display = "none";
+                }
+
+            }   
+
+        </script>
+    </head>
+
+    <body>
+        <div class="content">
+            <div>
+                <header>
+                    <div class="lang-select">
+                        <select onchange="changeLanguage()" id="language-select">
+                          <option value="ko" selected>한국어</option>
+                          <option value="en">English</option>
+                        </select>
+                    </div>
+                    <div class="navbar">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="icon/logo.png">
+                            </a>
+                        </div>
+                        <div class="buttonnavbar">
+                            <div>
+                                <img src="icon/bell.png"  class="bell" onclick="openModal('bellModal')">
+                                <div id="bellModal" style="display: none;">
+                                    <div id="bell1">
+                                        <img src="icon/ticket.png">
+                                        <div>
+                                            <쿵푸팬더 4> 개봉기념 예매권 증정 이벤트
+                                        </div> 
+                                    </div>
+                                    <div id="bell1">
+                                        <img src="image/crimeCity.jpg">
+                                        <div>
+                                            <범죄도시 4> 배우 '반재홍'<br>무대인사 이벤트!!
+                                        </div>
+                                    </div>
+                                    <div id="bell1">
+                                        <img src="icon/cinema.png">
+                                        <div>
+                                            새로 올라온 컨텐츠<br>
+                                            <label>
+                                                삼진그룹 영어토익반, 쾌걸 근육맨 2세, 여고추리반 등
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <img src="icon/option.png" class="option" onclick="showDropdownMenu()">
+                                <div class="dropdown-content" id="dropdownContent">
+                                    <a href="#">화질 설정</a>
+                                    <a href="#">이용권 정보</a>
+                                    <a href="#">계정</a>
+                                    <a href="#">고객센터</a>
+                                    <a href="login.html">휴플릭스에서 <br>로그아웃</a>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="icon/profile.png" class="profile" onclick="showDropdownMenu1()">
+                                <div class="dropdown-content" id="dropdownContent1">
+                                    <a href="profile.html">프로필 관리</a>
+                                    <a href="#">프로필에서 나가기</a>
+                                    <a href="#">프로필 이전</a>
+                                    <!-- 로그아웃을 누르면 처음 로그인 페이지로 이동 -->
+                                    <a href="login.html">휴플릭스에서 <br>로그아웃</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div id="player-text-a-en" class="en" style="display:none;"><h1>Create a review</h1></div>
+            <div id="player-text-a-ko" class="ko"><h1>리뷰 작성</h1></div>
+            <div class="program">
+                <div class="image-container">
+                    <img class="kill" src="image/살인자난감.png" onclick="showModal('modalWrap')"> 
+                </div>
+                <div id="modalWrap" class="modal">
+                    <div class="modal-content">
+                        <span id="closekill" class="close" onclick="hideModal('modalWrap')">&times;</span>
+                        <video 
+                            src="video/kill.mp4" 
+                            autoplay 
+                            muted
+                            >
+                        </video>
+                        <div>
+                            <div class="modalInfo">
+                                <font style="color:#2ee509">94% 일치</font>
+                                &nbsp;2024 에피소드 8개
+                                <img src="image/tool.PNG">
+                                <div class="modalInfo2"> 
+                                    출연: 최우식,손석구 이희준<br>
+                                    장르: 범죄 시리즈, 웹툰 원작 한국 드라마,스릴러 시리즈<br>
+                                    시리즈 특징: 색다른, 긴장감 넘치는
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="modalInfo4">
+                                살인자가 될 생각은 추호도 없었던 이탕. 하지만 악인을 감별해 내는 능력을 <br>
+                                자각하고 난 후 정의의 수호자로 새 삶을 시작하게 된다.
+                            </div>
+                            <div class="modalInfo5">
+                                <img src="image/killShow.PNG">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="star_rating">
+                        <span class="star on" value="1"></span>
+                        <span class="star" value="2"></span>
+                        <span class="star" value="3"></span>
+                        <span class="star" value="4"></span>
+                        <span class="star" value="5"></span>
+                    </div>
+                    <div>
+                        <div id="player-text-a-en" class="en" style="display:none;">
+                            <textarea class="review" placeholder="review"></textarea>
+                            <input type="submit" class="reviewButton" value="Review registration"  onclick="show()">
+                        </div>
+                        <div id="player-text-a-ko" class="ko">
+                            <textarea class="review" placeholder="리뷰평"></textarea>
+                            <input type="submit" class="reviewButton" value="리뷰 등록"  onclick="show()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            
+            <div class="program">
+                <div class="image-container">
+                    <img class="chicken" src="image/chicken.png" onclick="showModal('modalWrap2')">
+                </div>
+                <div id="modalWrap2" class="modal">
+                    <div class="modal-content">
+                        <span id="closechicken" class="close" onclick="hideModal('modalWrap2')">&times;</span>
+                        <video 
+                            src="video/chicken.mp4" 
+                            autoplay 
+                            muted
+                            >
+                        </video>
+                        <div>
+                            <div class="modalInfo">
+                                <font style="color:#2ee509">92% 일치</font>
+                                &nbsp;2024 에피소드 10개
+                                <img src="image/tool.PNG">
+                                <div class="modalInfo2"> 
+                                    출연: 류승룡, 안재홍, 김유정<br>
+                                    장르: 미스터리 시리즈, 코미디 시리즈, 웹툰 원작 한국 드라마<br>
+                                    시리즈 특징: 익살스러운, 색다른
+                                </div>
+                            </div>
+                            <p class="modalInfo3">오늘 시리즈 순위 5위</p>
+                            <div class="modalInfo4">
+                                인기 웹툰을 이병헌 감독이 각색한 코미디 드라마, 닭강정으로 변한 여자를<br>
+                                사람으로 되돌리려는 별난 두 남자의 고군분투기를 그린다.
+                            </div>
+                            <div class="modalInfo5">
+                                <img src="image/chickenShow.PNG">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="star_rating">
+                        <span class="star on" value="1"></span>
+                        <span class="star" value="2"></span>
+                        <span class="star" value="3"></span>
+                        <span class="star" value="4"></span>
+                        <span class="star" value="5"></span>
+                    </div>
+                    <div>
+                        <div id="player-text-a-en" class="en" style="display:none;">
+                            <textarea class="review" placeholder="review"></textarea>
+                            <input type="submit" class="reviewButton" value="Review registration"  onclick="show()">
+                        </div>
+                        <div id="player-text-a-ko" class="ko">
+                            <textarea class="review" placeholder="리뷰평"></textarea>
+                            <input type="submit" class="reviewButton" value="리뷰 등록"  onclick="show()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="program">
+                <div class="image-container">
+                    <img class="damzeul" src="image/damzeul.png" onclick="showModal('modalWrap3')">
+                </div>
+                <div id="modalWrap3" class="modal">
+                    <div class="modal-content">
+                        <span id="closedamzeul" class="close" onclick="hideModal('modalWrap3')">&times;</span>
+                        <video 
+                            src="video/damzeul.mp4" 
+                            autoplay 
+                            muted
+                            >
+                        </video>
+                        <div>
+                            
+                        </div>
+                        <p>댐즐 모달 내용</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="star_rating">
+                        <span class="star on" value="1"></span>
+                        <span class="star" value="2"></span>
+                        <span class="star" value="3"></span>
+                        <span class="star" value="4"></span>
+                        <span class="star" value="5"></span>
+                    </div>
+                    <div>
+                        <div id="player-text-a-en" class="en" style="display:none;">
+                            <textarea class="review" placeholder="review"></textarea>
+                            <input type="submit" class="reviewButton" value="Review registration"  onclick="show()">
+                        </div>
+                        <div id="player-text-a-ko" class="ko">
+                            <textarea class="review" placeholder="리뷰평"></textarea>
+                            <input type="submit" class="reviewButton" value="리뷰 등록"  onclick="show()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function changeLanguage() {
+                  var selectedLanguage = document.getElementById("language-select").value;
+                  var enElements = document.querySelectorAll('.ko');
+                  var koElements = document.querySelectorAll('.en');
+                  
+                  if (selectedLanguage === "ko") {
+                    
+                    enElements.forEach(function(element) {
+                      element.style.display = 'block';
+                    });
+                    
+                    koElements.forEach(function(element) {
+                      element.style.display = 'none';
+                    });
+                  } else if (selectedLanguage === "en") {
+                    
+                    enElements.forEach(function(element) {
+                      element.style.display = 'none';
+                    });
+                    
+                    koElements.forEach(function(element) {
+                      element.style.display = 'block';
+                    });
+                  }
+                }
+              </script>
+
+            <div class="footer-content">
+                <div class="footer-wrap">
+                    <div class="footer-ment">
+                    <p>고객센터&ensp;이용약관&ensp;개인정보처리방침&ensp;청소년보호정책&ensp;법적고지</p>
+                    </div>
+                <div class="copyright-box">
+                    <p>
+                        <span>대표:2조</span>
+                        <span>|&nbsp;사업자등록번호 : 000-123-1234</span>
+                        <span>|&nbsp;통신판매신고번호 : 2024-충남천안-1234호</span>
+                    </p>
+                    <p>
+                        <span>사업장:충청남도 천안시 동남구 휴먼교육센터</span>
+                    </p>
+                    <p>
+                        <span>고객센터(평일 09시~17시 30분/점심시간 12시 50분~1시40분)</span>
+                        <span>|&nbsp;전화번호(ARS) : 1234-1234(챗봇&#47;채팅 상담 연결)</span>
+                    </p>
+                </div>
+                <div class="social-icons">
+                    <div class="css-img">
+                        <a href="https://www.youtube.com/" target="_blank">
+                        <img src="icon/youtube.png" alt="youtube">
+                        </a>
+                    </div>
+                    <div class="css-img">
+                        <a href="https://twitter.com/" target="_blank">
+                        <img src="icon/twitter.png" alt="Twitter">
+                        </a>
+                    </div>
+                    <div class="css-img">
+                        <a href="https://www.instagram.com/" target="_blank">
+                        <img src="icon/instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+                    <div class="css-img">
+                        <a href="https://www.facebook.com/" target="_blank">
+                        <img src="icon/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
+                <div class="foot-foot">
+                    &copy;HUFLIX corp.ALL RIGHTS RESERVED.
+                </div>
+            </div>
+           
+
+
+        </div>
+
+            
+        
+
+    </body>
+</html>

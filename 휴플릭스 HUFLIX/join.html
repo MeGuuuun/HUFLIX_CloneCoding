@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUFLIX :: join</title>
+    <link rel="stylesheet" href="./css/join.css">
+    <script src="./jquery-1.11.0.min.js"></script>
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2>회원가입</h2>
+      <form action="#">
+        <div class="form-control">
+          <input type="text" required>
+          <label>이메일 주소 또는 전화번호</label>
+        </div>
+        <div class="form-control">
+          <input type="password" required>
+          <label>비밀번호</label>
+        </div>
+        <div class="form-control">
+          <input type="password-cfm" required>
+          <label>비밀번호 확인</label>
+        </div>
+        <div class="form-control">
+          <input type="name" required>
+          <label>이름</label>
+        </div>
+
+        <div class="foot-btn">
+          <button type="submit" id="foot-btn-make" onclick="location.href='login.html'">계정 생성</button>
+        </div>
+      </form>
+      <div id="find">
+        <!--아이디 찾기 페이지로 이동-->
+        <div class="findId">
+          <a href="find-id.html">아이디 찾기</a>
+        </div>
+        <!--비밀번호 재설청 페이지로 이동-->
+        <div class="findPwd">
+          <a href="find-pwd.html">비밀번호 재설정</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="load">
+      <div class="rythm"></div>
+      <div class="rythm"></div>
+      <div class="rythm"></div>
+      <div class="rythm"></div>
+      <div class="rythm"></div>
+  </div>
+
+  <script>
+      $(document).ready(function(){
+          setTimeout(removeLoader, 2000);
+      })
+
+      function removeLoader(){
+          $('#load').fadeOut();
+          $('#load').style.display = none;
+      }
+  </script>
+</body>
+</html>

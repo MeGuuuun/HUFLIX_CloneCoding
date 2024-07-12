@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+
+#content {
+    width: 1000px;
+    height: 800px;
+}
+
+
+#load {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.rythm {
+    border-radius: 3px;
+    height: 50px;
+    width: 10px;
+    background-color: #2ee509;
+    margin: 0px 3px;
+    animation: rythmAnimation 1s ease-in-out infinite;
+    z-index: 100;
+}
+
+@keyframes rythmAnimation {
+    0% {
+        height: 30px;
+    }
+
+    40% {
+        height: 60px;
+    }
+
+    60% {
+        height: 30px;
+    }
+
+    80% {
+        height: 30px;
+    }
+
+    100% {
+        height: 30px;
+    }
+}
+
+.rythm:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.rythm:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.rythm:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.rythm:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+#navBar {
+    width: 1000px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+#navLeft {
+    width: 300px;
+    padding-left:10px;
+}
+
+#logo img {
+    width: 200px;
+    height: 90px;
+    cursor:pointer;
+}
+
+#navRight {
+    margin-top:15px;
+    display: flex;
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchDiv {
+    height: 50px;
+    display: flex;
+    width:600px;
+    align-items: center;
+}
+
+#searchInput {
+    border:3px solid white;
+    background-color:black;
+    width:100%;
+    height:50px;
+    font-size:15px;
+    margin-right:20px;
+    color:white;
+}
+
+#searchInput::placeholder {
+    color:white;
+    padding-left:10px;
+}
+
+#searchBtn {
+    width:100px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor:pointer;
+}
+
+#searchBtn img {
+    width: 20px;
+    height: 20px;
+    filter: invert();
+    margin-right: 5px;
+    cursor:pointer;
+}
+
+#searchBtn label {
+    font-weight: bold;
+    color:white;
+    cursor:pointer;
+}
+
+#searchBtn:hover {
+    background-color: white;
+}
+
+#searchBtn:hover img {
+    filter:invert(0);
+}
+
+#searchBtn:hover label {
+    color:black;
+}
+
+#mainScreen {
+    margin-top:50px;
+    width:1000px;
+    height:700px;
+}
+
+#mainScreen h1 {
+    color:white;
+    padding-left:20px;
+}
+
+#resultImg {
+    width:100%;
+    padding:20px;
+}
+
+#resultTitle {
+    font-size: 30px;
+    color:white;
+    padding-left:20px;
+}
+
+#resultLabel {
+    display: none;
+    font-size:30px;
+    color:white;
+    padding-left:20px;
+}
+
+#footer {
+    padding-left:20px;
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.footer-ment {
+    color: rgb(222, 222, 222);
+    font-size: 13px;
+}
+
+.copyright-box p {
+    color: #888888;
+    font-size: 11px;
+}
+
+.css-img {
+    display: flex;
+}
+
+.social-icons {
+    display: flex;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.css-img img {
+    background-color: #212121;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.foot-foot {
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+}

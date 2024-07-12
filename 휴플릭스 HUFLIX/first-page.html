@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUFLIX :: first-page</title>
+  <link rel="stylesheet" href="./css/first-page.css">
+  
+</head>
+<body>
+  
+  <div class="container">
+    <div class="headDiv">
+      <div class="head">
+        <!--로고 링크 걸기-->
+        <img src="./icon/logo.png">
+      </div>
+    </div>
+
+    <div class="lang-select">
+      <select onchange="changeLanguage()" id="language-select">
+        <option value="ko" selected>한국어</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    
+    <!-- Main Content Section -->
+    <div class="mainDiv">
+      <div class="main-ment">
+        <!-- English Content -->
+        <div id="main-ment-en1" class="en" style="display:none;">Watch movies, series, and more</div>
+        <div id="main-ment-en2" class="en" style="display:none;">unlimitedly anytime, anywhere. You can cancel anytime.</div>
+        <!-- Korean Content -->
+        <div id="main-ment-ko1" class="ko">영화, 시리즈 등을 무제한으로</div>
+        <div id="main-ment-ko2" class="ko"> 어디서나 자유롭게 시청하세오. 해지는 언제든 가능합니다.</div>
+      </div>
+      <div id="login-join">
+        <!--로그인 버튼 링크 걸기-->
+        <div id="login" class="en" style="display:none;"><button onclick="location.href='login.html'">Login</button></div>
+        <div id="login" class="ko" ><button onclick="location.href='login.html'">로그인</button></div>
+        <!--회원가입 버튼 링크 걸기-->
+        <div id="join" class="en" style="display:none;"><button onclick="location.href='join.html'">Join</button></div>
+        <div id="join" class="ko" ><button onclick="location.href='join.html'">회원가입</button></div>
+      </div>
+    </div>
+    
+    <div class="midDiv">
+      <img src="./icon/hhlogo.PNG" id="logo2"> 
+      <div class="mid-ment en" style="display:none;">The happiness of receiving 5,000 won per month. Join <strong>HUFLIX</strong></div>
+      <div class="mid-ment ko" >월 5000원의 행복. 휴플릭스와 함께하세요</div>
+    </div>
+
+    <div class="footDiv">
+      <div class="foot-coment">
+        <!-- English Content -->
+        <div id="foot-coment-a" class="ko">휴플릭스 오리지널 시리즈</div>
+        <div id="foot-coment-b" class="coment ko">휴플릭스에서만 만날 수 있는<br>오리지널 콘텐츠를 감상해 보세요.</div>
+        <!-- English Content -->
+        <div id="foot-coment-a" class="en" style="display: none;">HUFLIX Original Series</div>
+        <div id="foot-coment-b" class="coment en" style="display: none;">HUFLIX is where you can enjoy<br>original content exclusively.</div>
+      </div>
+      <img src="./image/mainposter.png" alt="movie">
+    </div>
+
+    <div class="foot-slide-img">
+      <div class="foot-comment">
+        <!-- English Content -->
+        <div id="all-contents" class="en" style="display:none;">All content that's popular these days</div>
+        <div id="all-contets-baby" class="en" style="display:none;">tvM.JTBS.Nnet programs, movies, foreign series,<br>Paramount + Original and Exclusive Series</div>
+        <!-- Korean Content -->
+        <div id="all-contents" class="ko" >요즘 뜨는 모든 콘텐츠</div>
+        <div id="all-contets-baby" class="ko" >tvM.JTBS.Nnet 프로그램, 영화, 해외 시리즈,<br>파라마운트 + 오리지널 및 독점 시리즈</div>
+      </div>
+    </div>
+
+      <!--슬라이드-->
+    <div class="slide-wrapping">
+      
+      <ul class="boxes">
+        <li class="a"></li>
+        <li class="b"></li>
+        <li class="c"></li>
+        <li class="d"></li>
+        <li class="e"></li>
+        <li class="f"></li>
+        <li class="g"></li>
+        <li class="h"></li>
+        <li class="i"></li>
+        <li class="j"></li>
+      </ul>
+      
+      <ul class="boxes list2">
+        <li class="a"></li>
+        <li class="b"></li>
+        <li class="c"></li>
+        <li class="d"></li>
+        <li class="e"></li>
+        <li class="f"></li>
+        <li class="g"></li>
+        <li class="h"></li>
+        <li class="i"></li>
+        <li class="j"></li>
+      </ul>
+    </div>
+
+    <div class="player">
+      <div class="player-text-a">
+        <!-- English Content -->
+        <div id="player-text-a-en" class="en" style="display:none;">Watch live anytime, anywhere</div>
+        <!-- Korean Content -->
+        <div id="player-text-a-ko" class="ko" >언제 어디서나 본방 사수</div>
+      </div>
+      
+      <div class="player-text-b">
+        <!-- English Content -->
+        <div id="player-text-b-en" class="en" style="display:none;">Quickly watch again with Quick VOD just 5 minutes after the live broadcast,<br>Watch broadcasts you missed using a time machine.</div>
+        <!-- Korean Content -->
+        <div id="player-text-b-ko" class="ko" >본방 시작 5분 만에 Quick VOD로 빠르게 다시보고,<br>놓친 방송은 타임머신으로 돌려보세요.</div>
+      </div>
+
+      <div class="tv-container">
+        <div class="video-overlay">
+          <video src="./video/video.mp4" muted autoplay playsinline loop></video>
+        </div>
+        <div class="video-img">
+          <img src="./icon/blackLogo.PNG">
+        </div>
+      </div>
+    </div>
+
+    <div class="player">
+      <div class="player-text-a">
+        <!-- English Content -->
+        <div id="player-text-a-en" class="en" style="display:none;">Enjoy without restrictions on your preferred device.</div>
+        <!-- Korean Content -->
+        <div id="player-text-a-ko" class="ko" >원하는 기기로 자유롭게 감상</div>
+      </div>
+      
+      <div class="player-text-b">
+        <!-- English Content -->
+        <div id="player-text-b-en" class="en" style="display:none;">
+          Smartphones, tablets, PCs, and even TVs!
+          Enjoy with family and friends with multi-profile support for up to 4 people.</div>
+        <!-- Korean Content -->
+        <div id="player-text-b-ko" class="ko" >
+          스마트폰, 태블릿, PC, TV까지!<br>
+          최대 4인 멀티 프로필로 가족, 친구와 함께 감상해 보세요.</div>
+      </div>
+
+      <div class="tv-container2">
+        <div class="video-overlay2">
+          <video src="./video/video2.mp4" muted autoplay playsinline loop></video>
+        </div>
+      </div>
+    </div>
+      
+      <script>
+
+        //언어변경
+        function changeLanguage() {
+          var selectedLanguage = document.getElementById("language-select").value;
+          var enElements = document.querySelectorAll('.ko');
+          var koElements = document.querySelectorAll('.en');
+          
+          if (selectedLanguage === "ko") {
+            
+            enElements.forEach(function(element) {
+              element.style.display = 'block';
+            });
+            
+            koElements.forEach(function(element) {
+              element.style.display = 'none';
+            });
+          } else if (selectedLanguage === "en") {
+            
+            enElements.forEach(function(element) {
+              element.style.display = 'none';
+            });
+            
+            koElements.forEach(function(element) {
+              element.style.display = 'block';
+            });
+          }
+        }
+      </script>
+
+    <hr color="#4d4f4d" width="100%" size="2px"></hr>
+
+    <div class="footer-content">
+      <div class="footer-wrap">
+        <div class="footer-ment">
+          <p>고객센터&ensp;이용약관&ensp;개인정보처리방침&ensp;청소년보호정책&ensp;법적고지</p>
+        </div>
+        <div class="copyright-box">
+          <p>
+            <span>대표:2조</span>
+            <span>|&nbsp;사업자등록번호 : 000-123-1234</span>
+            <span>|&nbsp;통신판매신고번호 : 2024-충남천안-1234호</span>
+          </p>
+          <p>
+            <span>사업장:충청남도 천안시 동남구 휴먼교육센터</span>
+          </p>
+          <p>
+            <span>고객센터(평일 09시~17시 30분/점심시간 12시 50분~1시40분)</span>
+            <span>|&nbsp;전화번호(ARS) : 1234-1234(챗봇&#47;채팅 상담 연결)</span>
+          </p>
+        </div>
+        <div class="social-icons">
+          <div class="css-img">
+            <a href="https://www.youtube.com" target="_blank">
+              <img src="./icon/youtube.png" alt="youtube">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://twitter.com" target="_blank">
+              <img src="./icon/twitter.png" alt="Twitter">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="./icon/instagram.png" alt="Instagram">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="./icon/facebook.png" alt="Facebook">
+            </a>
+          </div>
+        </div>
+        <div class="foot-foot">
+          &copy;HUFLIX corp.ALL RIGHTS RESERVED.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

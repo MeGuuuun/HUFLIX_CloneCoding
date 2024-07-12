@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <title>HUFLIX :: main</title>
+    <script src="./jquery-1.11.0.min.js"></script>
+    <script>
+        var movieArray =
+            [
+                ["듄2", "./image/dune2.jpg", "황제의 모략으로 멸문한 가문의 유일한 후계자 폴 \n 반란군들과 함께 황제의 모든 것을 파괴할 전투를 준비한다."],
+                ["웡카", "./image/wonka.jpg", "꿈에서 시작된 가장 달콤한 이야기!! \n 로알드 달의 동화 <찰리와 초콜릿 공장>의 프리퀄 작품"],
+                ["고스트 버스터즈", "./image/ghostBusters.jpg", "유령을 퇴치하는 '그루버슨(폴 러드)'과 라이드 버스터즈 멤버들은 \n 얼어붙은 세상을 깨부수기 위해 유령 군단을 쫒기 시작하는데..."],
+                ["고질라 vs 콩", "./image/godzilla.jpg", "깊은 동면에 빠진 '고질라'는 알 수 없는 신호로 인해 깨어나고 \n 푸른 눈의 폭군 '스카 킹'에게 반격하기 위해 '콩'과 힘을 합치는데.."],
+                ["인사이드 아웃 2", "./image/insideout.jpg", "누구나 가지고 있는 감정들을 캐릭터로 표현해 전 세계인의 공감을 사며 \n 사랑받은 디즈니/픽사 영화 <인사이드 아웃>의 두번째 이야기"],
+                ["오펜하이머", "./image/oppenheimer.jpg", "세상을 구하기 위해 세상을 파괴할 지도 모르는 선택을 해야하는 \n 천재 과학자의 핵개발 프로젝트."],
+                ["위키드", "./image/wicked.jpg", "자신의 진정한 힘을 발견하지 못 한 '엘파바'와 \n 본성을 발견하지 못 한 '글린다'의 우정과 위기 그리고 모험"],
+                ["어드벤처타임", "./image/adventureTime.jpg", "판타지 세계 우 랜드에서 영웅이 되는 것이 꿈인 인간 핀과 \n 마법 강아지 제이크가 벌이는 정신나간 활약상"],
+                ["오징어 게임", "./image/squidGame.jpg", "456억원의 상금이 걸린 의문의 서바이벌에 참가한 사람들이 \n 최후의 승자가 되기 위해 목숨을 거는 이야기"],
+                ["007 : 노 타임 투 다이", "./image/007.jpg", "가장 강력한 운명의 적과 마주하게 된 제임스 본드의 마지막 미션이 시작된다!"]
+            ];
+
+        var movieArrayEn =
+            [
+                ["Dune2", "./image/dune2.jpg", "The sole successor of the annihilated lineage by the Emperor's stratagem, Paul, \n prepares for battle alongside the rebels to destroy everything of the Emperor."],
+                ["Wonka", "./image/wonka.jpg", "The sweetest story that began in a dream!! \n A prequel to Roald Dahl's fairy tale <Charlie and the Chocolate Factory>."],
+                ["Ghost Busters", "./image/ghostBusters.jpg", "'Grooberson (Paul Rudd)', who banishes ghosts, \n and the members of the Ride Busters \n begin to chase after the ghost army to break the frozen world..."],
+                ["Godzilla vs Kong", "./image/godzilla.jpg", "Fallen into a deep slumber, 'Godzilla' awakens due to an unknown signal \n and joins forces with 'Kong' to counterattack against the tyrant with blue eyes, 'Skull King'..."],
+                ["Inside Out 2", "./image/insideout.jpg", "Expressing universal emotions through characters and garnering empathy from people worldwide, \n the beloved Disney/Pixar film <Inside Out> tells its second story."],
+                ["Offenheimer", "./image/oppenheimer.jpg", "The nuclear development project of a genius scientist who must make choices, \n perhaps even risking the destruction of the world, to save it."],
+                ["Wicked", "./image/wicked.jpg", "The friendship, challenges, and adventures of 'Elphaba' and 'Glinda'."],
+                ["Adventure Time", "./image/adventureTime.jpg", "The insane antics of human Finn, whose dream is to become a hero \n in the fantasy world of Ooo, and magical dog Jake."],
+                ["Squid Game", "./image/squidGame.jpg", "The story of individuals who participate in \n a mysterious survival competition with a prize of 4.56 billion won"],
+                ["007 : No Time to Die", "./image/007.jpg", "The beginning of James Bond's final mission \n as he faces his most powerful foe."]
+            ];
+
+        function showRandomImg(lang) {
+            var num = Math.floor(Math.random() * movieArray.length);
+            var img = document.getElementById("randomImage");
+
+            if (lang == "ko") {
+                console.log(lang);
+                img.src = movieArray[num][1];
+                var title = document.getElementById("title");
+                title.innerText = movieArray[num][0];
+                var desc = document.getElementById("description");
+                desc.innerText = movieArray[num][2];
+
+            } else if (lang == "en") {
+                console.log(lang);
+                img.src = movieArrayEn[num][1];
+                var title = document.getElementById("title");
+                title.innerText = movieArrayEn[num][0];
+                var desc = document.getElementById("description");
+                desc.innerText = movieArrayEn[num][2];
+            }
+        }
+
+        function showModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function hideModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            if (modal.classList.contains('on')) {
+                modal.classList.remove('on');
+            } else modal.classList.add('on');
+        }
+
+        function changeLanguage() {
+            var selectedLanguage = document.getElementById("language-select").value;
+            var enElements = document.querySelectorAll('.ko');
+            var koElements = document.querySelectorAll('.en');
+
+            showRandomImg(selectedLanguage);
+
+            if (selectedLanguage === "ko") {
+
+                enElements.forEach(function (element) {
+                    element.style.display = 'block';
+                });
+
+                koElements.forEach(function (element) {
+                    element.style.display = 'none';
+                });
+            } else if (selectedLanguage === "en") {
+
+                enElements.forEach(function (element) {
+                    element.style.display = 'none';
+                });
+
+                koElements.forEach(function (element) {
+                    element.style.display = 'block';
+                });
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="navBar">
+            <div id="navLeft">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="./icon/logo.png">
+                    </a>
+                </div>
+                <div id="profile" onclick="location.href='mypage.html'">
+                    <img src="./icon/profile.jpg">
+                    <div class="ko">프로필</div>
+                    <div class="en" style="display: none;">Profile</div>
+                </div>
+            </div>
+            <div id="navRight">
+                <div id="search" onclick="location.href='search.html'">
+                    <img src="./icon/search.png">
+                    <label class="ko">검색</label>
+                    <label class="en" style="display:none;">Search</label>
+                </div>
+                <div id="review" onclick="location.href='review.html'">
+                    <img src="./icon/star.png">
+                    <label class="ko">리뷰</label>
+                    <label class="en" style="display:none;">Review</label>
+                </div>
+                <div id="notification" onclick="openModal('slideModal')">
+                    <img src="./icon/bell.png">
+                    <label class="ko">알림</label>
+                    <label class="en" style="display:none;">notification</label>
+                </div>
+                <div id="slideModal">
+                    <div id="slideDiv">
+                        <img src="./icon/ticket.png">
+                        <div>
+                            <쿵푸팬더 4> 개봉기념 예매권 증정 이벤트
+                        </div>
+                    </div>
+                    <div id="slideDiv">
+                        <img src="./image/crimeCity.jpg">
+                        <div>
+                            <범죄도시 4> 배우 '반재홍' <br> 무대인사 이벤트!!
+                        </div>
+                    </div>
+                    <div id="slideDiv">
+                        <img src="./icon/cinema.png">
+                        <div>새로 올라온 컨텐츠 <br>
+                            <label>
+                                삼진그룹 영어토익반, 쾌걸 근육맨 2세, 여고추리반 등
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lang-select">
+            <select oninput="changeLanguage()" id="language-select">
+                <option value="ko" selected>한국어</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <div id="mainScreen">
+            <img id="randomImage">
+            <div id="movieInfo">
+                <h1 id="title"></h1>
+                <h4 class="ko">매주 새로운 트레일러 공개</h3>
+                <h4 class="en" style="display: none;">New trailers are released every week</h3>
+                    <p id="description"></p>
+                    <div id="btnDiv">
+                        <div id="playBtn">
+                            <img src="./icon/play.png">
+                            <label class="ko">재생</label>
+                            <label class="en" style="display: none;">Play</label>
+                        </div>
+                        <div id="infoBtn">
+                            <img src="./icon/info.png">
+                            <label class="ko">상세정보</label>
+                            <label class="en" style="display: none;">Details</label>
+                        </div>
+                    </div>
+                    <script>
+                        var selectedLanguage = document.getElementById("language-select").value;
+                        showRandomImg(selectedLanguage);
+                    </script>
+            </div>
+        </div>
+        <div id="category" class="ko">해외 영화</div>
+        <div id="category" class="en" style="display: none;">Foreign Film</div>
+        <div id="videoList">
+            <div id="video">
+                <img src="./image/aquaman.jpg" id="videoImg" onclick="showModal('modal1')">
+                <div id="videoTitle" class="ko">아쿠아맨2</div>
+                <div id="videoTitle" class="en" style="display: none;">Aquaman2</div>
+                <div id="modal1" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/UGc5Tzz19UY?si=ILGt5Xbw3cKLx25a"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>아쿠아맨과 로스트 킹덤 (2023)</h3>
+                            <p>
+                                장르 : 슈퍼히어로 / 액션 / SF / 코미디 / 가족 / 버디
+                                <br>
+                                감독 : 제임스 완
+                                <br>
+                                주연 : 제이슨 모모아, 엠버 허드, 패트릭 윌슨, 니콜 키드먼
+                                <br>
+                                <br>
+                                아틀란티스 왕국을 이끌 왕의 자리에 오른 "아쿠아맨"<br>
+                                그 앞에 "블랙 만타"가 세상을 뒤흔들 강력한 지배 아이템 "블랙 트라이던트"를 손에 넣게 된다. <br>
+                                그동안 겪지 못 했던 최악의 위협 속 "아쿠아맨"은<br>
+                                "블랙 만타"와 손을 잡았던 이부 동생 "옴" 없이는 절대적 힘이 부족한 상황.
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal1')">닫기</div>
+                    </div>
+                </div>
+            </div>
+            <div id="video">
+                <img src="./image/johnWick.jpg" id="videoImg" onclick="showModal('modal2')">
+                <div id="videoTitle" class="ko">존윅 4</div>
+                <div id="videoTitle" class="en" style="display: none;">johnWick 4</div>
+                <div id="modal2" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/qEVUtrk8_B4?si=DOI_WIgBya0xPQsZ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>존윅 4 (2023)</h3>
+                            <p>
+                                장르 : 액션, 느와르, 스릴러, 범죄, 복수<br>
+                                감독 : 채드 스타헬스키<br>
+                                주연 : 키아누 리브스, 견자단, 빌 스카스가드
+                                <br>
+                                <br>
+                                죽을 위기에서 살아난 "존 윅"은<br>
+                                "최고 회의"를 쓰러트릴 방법을 찾아낸다.<br>
+                                비로소 완전한 자유의 희망을 보지만,<br>
+                                NEW 빌런 "그라몽 후작"과 전 세계의 최강 연합은<br>
+                                존 윅의 오랜 친구까지 적으로 만들어 버리고,<br>
+                                새로운 위기에 놓인 존 윅은 최후의 반격을 준비하는데...
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal2')">닫기</div>
+                    </div>
+                </div>
+            </div>
+            <div id="video">
+                <img src="./image/fastFurious.jpg" id="videoImg" onclick="showModal('modal3')">
+                <div id="videoTitle" class="ko">분노의 질주 10</div>
+                <div id="videoTitle" class="en" style="display: none;">Fast & Furious 10</div>
+                <div id="modal3" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/zmNRHgRG3lo?si=JjT5jFRb6xMb9J2E"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>분노의 질주 : 라이드 오어 다이 (2023)</h3>
+                            <p>
+                                장르 : 범죄, 액션, 스릴러, 느와르, 어드벤처<br>
+                                감독 : 루이 르테리에<br>
+                                주연 : 빈 디젤, 미셀 로드리게즈, 존 시나, 브리 라슨, 제이슨 모모아 등
+                                <br>
+                                <br>
+                                아무리 빨리 달려도 과거를 앞지를 순 없다<br>
+                                <br>
+                                돔(빈 디젤)과 그의 패밀리 앞에 나타난 운명의 적 단테(제이슨 모모아)<br>
+                                과거의 그림자는 돔의 모든 것을 파괴하기 위해 달려온다.<br>
+                                단테에 의해 산산히 흩어진 패밀리들은 모두 목숨을 걸고 맞서야 하는 함정에 빠지고 마는데...<br>
+                                <br>
+                                달리거나 죽거나, 그들의 마지막 질주가 시작된다!
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal3')">닫기</div>
+                    </div>
+                </div>
+            </div>
+            <div id="video">
+                <img src="./image/missionImpossible.jpg" id="videoImg" onclick="showModal('modal4')">
+                <div id="videoTitle" class="ko">미션 임파서블 : 데드 레코닝</div>
+                <div id="videoTitle" class="en" style="display: none;">Mission Impossible - Dead Reckoning</div>
+                <div id="modal4" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/92h-aXeBnxU?si=4x-iwE-GcXaYP6S5"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>미션 임파서블 : 데드 레코닝 (2023)</h3>
+                            <p>
+                                장르 : 액션, 첩보물, SF<br>
+                                감독 : 크리스토퍼 맥쿼리<br>
+                                주연 : 톰 크루즈, 레베카 퍼거슨, 헤일리 앳웰 등
+                                <br>
+                                <br>
+                                가장 위험한 작전, 그의 마지막 선택<br>
+                                <br>
+                                모든 인류를 위협할 새로운 무기를 추적하게 된 에단 헌트와 IMF팀은<br>
+                                이 무기가 인류의 미래를 통제할 수 있다는 사실을 알게된다.<br>
+                                가장 강력한 빌런을 마주하게 된 그는 자신이 아끼는 사람들과 중요한 임무 사이에서<br>
+                                선택을 해야하는 상황에 놓이게 되는데...
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal4')">닫기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="category" class="ko">가족 영화</div>
+        <div id="category" class="en" style="display: none;">Movie for Kids</div>
+        <div id="videoList">
+            <div id="video">
+                <img src="./image/kungfuPanda.jpg" id="videoImg" onclick="showModal('modal5')">
+                <div id="videoTitle" class="ko">쿵푸판다 4</div>
+                <div id="videoTitle" class="en" style="display: none;">Kung Fu Panda 4</div>
+                <div id="modal5" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/b0yAOYIvP1Y?si=yhqVFY3CQsWkQXnP"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>쿵푸판다 4 (2024)</h3>
+                            <p>
+                                장르 : 애니메이션, 액션, 코미디<br>
+                                감독 : 마이크 미첼, 스테파니 스타인<br>
+                                주연 : 잭 블랙, 아콰피나, 비올라 데이비스, 키호이콴 등
+                                <br>
+                                <br>
+                                오랜만이지! 드림웍스 레전드 시리즈 마침내 컴백!<br>
+                                <br>
+                                마침내 내면의 평화... 냉면의 평화....가 찾아왔다고 믿는 용의 전사 '포'<br>
+                                이제 평화의 계곡의 영적 지도자가 되고, 자신을 대신할 후계자를 찾아야만 한다.<br>
+                                <br>
+                                하지만 모든 쿵푸 마스터들의 능력을 그대로 복제하는 강력한 빌런 '카멜레온'이 나타나고<br>
+                                그녀를 막기 위해 정체를 알 수 없는 쿵푸 고수 '젠'과 함께 모험을 떠나게 되는데...<br>
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal5')">닫기</div>
+                    </div>
+                </div>
+            </div>
+            <div id="video">
+                <img src="./image/sonic.jpg" id="videoImg" onclick="showModal('modal6')">
+                <div id="videoTitle" class="ko">수퍼 소닉</div>
+                <div id="videoTitle" class="en" style="display: none;">Super Sonic</div>
+                <div id="modal6" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/NM8zgOYc9tQ?si=Fk3OhI7TTCVH4uq-"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>수퍼 소닉 (2020)</h3>
+                            <p>
+                                장르 : 액션, 모험, 코미디, 판타지, SF<br>
+                                감독 : 제프 파울러<br>
+                                주연 : 짐 캐리, 제임스 마스던, 벤 슈와프 등
+                                <br>
+                                <br>
+                                세상을 구할 초고속 히어로의 탄생!<br>
+                                <br>
+                                소리보다 빠른 초고속 고슴도치 히어로 '소닉'은 지구에 불시착한다.<br>
+                                그의 특별한 능력을 감지한 과학자 '닥터 로보트닉'은 세계 정복의 야욕을 채우려 하고,<br>
+                                경찰관 '톰'은 위험에 빠진 '소닉'을 돕기 위해 나서는데...!<br>
+                                하지만 모든 쿵푸 마스터들의 능력을 그대로 복제하는 강력한 빌런 '카멜레온'이 나타나고<br>
+                                과연, '소닉'은 천재 악당에 맞서 지구를 지킬 수 있을까?<br>
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal6')">닫기</div>
+                    </div>
+                </div>
+            </div>
+            <div id="video">
+                <img src="./image/aladin.jpg" id="videoImg" onclick="showModal('modal7')">
+                <div id="videoTitle" class="ko">알라딘</div>
+                <div id="videoTitle" class="en" style="display: none;">Aladin</div>
+                <div id="modal7" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/KrM3vS5sy2w?si=-_d6V7y8ElNOcQmd"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>알라딘 (2019)</h3>
+                            <p>
+                                장르 : 판타지, 뮤지컬, 로맨틱 코미디, 어드벤처, 액션<br>
+                                감독 : 가이 리치<br>
+                                주연 : 미나 마수드, 나오미 스콧, 윌 스미스
+                                <br>
+                                <br>
+                                머나먼 사막 속 신비의 아그라바 왕국의 시대.<br>
+                                좀도둑 '알라딘'은 마법사 '자파'의 의뢰로 마법 램프를 찾아 나섰다가<br>
+                                주인에게 세 가지 소원을 들어주는 지니를 만나게 되고,<br>
+                                자스민 공주의 마음을 얻으려다 생각도 못 했던 모험에 휘말리게 되는데...<br>
+                                <br>
+                                마법의 양탄자를 타고 떠나는 모험!
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal7')">닫기</div>
+                    </div>
+                </div>
+            </div>
+            <div id="video">
+                <img src="./image/minions.jpg" id="videoImg" onclick="showModal('modal8')">
+                <div id="videoTitle" class="ko">미니언즈2</div>
+                <div id="videoTitle" class="en" style="display: none;">Minions 2</div>
+                <div id="modal8" class="modal">
+                    <div id="modalPopup">
+                        <div id="modalVideo">
+                            <iframe width="840" height="472"
+                                src="https://www.youtube.com/embed/qoXf5Zr3BhA?si=Fnh5GZr-wMKDIGlq"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="modalDesc">
+                            <h3>미니언즈2 (2022)</h3>
+                            <p>
+                                장르 : 애니메이션, 모험, 코미디, 액션<br>
+                                감독 : 카일 발다, 브래드 에이블슨, 조너선 델 발<br>
+                                주연 : 스티브 카렐, 피에르 코팽, 터라지 P.헨슨, 장 클로드 반담
+                                <br>
+                                <br>
+                                세계 최고의 슈퍼 악당을 꿈꾸는 미니보스 '그루'와 그를 따라다니는 미니언들.<br>
+                                어느 날 그루는 최고의 악당 조직 '6'의 마법 스톤을 훔치는데 성공하지만<br>
+                                뉴페이스 미니언 '오토'의 실수로 스톤을 잃어버리고 빌런6에게 납치까지 당한다.<br>
+                                미니보스를 구하기 위해 잃어버린 스톤을 되찾아야 하는 '오토', '케빈','스튜어트' 그리고 '밥'<br>
+                                <br>
+                                올여름 극장가를 점령할 MCU(미니언즈 시네마틱 유니버스)가 돌아온다!<br>
+                            </p>
+                        </div>
+                        <div id="modalBtn" onclick="hideModal('modal8')">닫기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="category" class="ko">실시간 영화 TOP 10</div>
+        <div id="category" class="en" style="display: none;">HOT Chart 10</div>
+        <div id="posterList">
+            <div id="poster">
+                <img src="./image/exhuma.jpg">
+                <div id="posterTitle" class="ko">파묘</div>
+                <div id="posterTitle" class="en" style="display: none;">Exhuma</div>
+            </div>
+            <div id="poster">
+                <img src="./image/milsu.jpg">
+                <div id="posterTitle" class="ko">밀수</div>
+                <div id="posterTitle" class="en" style="display: none;">Smugglers</div>
+            </div>
+            <div id="poster">
+                <img src="./image/seoulSpring.jpg">
+                <div id="posterTitle" class="ko">서울의 봄</div>
+                <div id="posterTitle" class="en" style="display: none;">Spring of Seoul</div>
+            </div>
+            <div id="poster">
+                <img src="./image/concrete.jpg">
+                <div id="posterTitle" class="ko">콘크리트 유토피아</div>
+                <div id="posterTitle" class="en" style="display: none;">Concrete Utopia</div>
+            </div>
+            <div id="poster">
+                <img src="./image/slamdunk.jpg">
+                <div id="posterTitle" class="ko">더 퍼스트 슬램덩크</div>
+                <div id="posterTitle" class="en" style="display: none;">The First : Slam Dunk</div>
+            </div>
+            <div id="poster">
+                <img src="./image/anatomy.jpg">
+                <div id="posterTitle" class="ko">추락의 해부</div>
+                <div id="posterTitle" class="en" style="display: none;">Anatomy of Fall</div>
+            </div>
+            <div id="poster">
+                <img src="./image/monster.jpg">
+                <div id="posterTitle" class="ko">괴물</div>
+                <div id="posterTitle" class="en" style="display: none;">Monster</div>
+            </div>
+            <div id="poster">
+                <img src="./image/decision.jpg">
+                <div id="posterTitle" class="ko">헤어질 결심</div>
+                <div id="posterTitle" class="en" style="display: none;">Decision to Leave</div>
+            </div>
+            <div id="poster">
+                <img src="./image/mogadishu.jpg">
+                <div id="posterTitle" class="ko">모가디슈</div>
+                <div id="posterTitle" class="en" style="display: none;">Mogadishu</div>
+            </div>
+            <div id="poster">
+                <img src="./image/hansan.jpg">
+                <div id="posterTitle" class="ko">한산</div>
+                <div id="posterTitle" class="en" style="display: none;">Hansan : Rising Dragon</div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer-content">
+                <div class="footer-wrap">
+                    <div class="footer-ment">
+                        <p>고객센터&ensp;이용약관&ensp;개인정보처리방침&ensp;청소년보호정책&ensp;법적고지</p>
+                    </div>
+                    <div class="copyright-box">
+                        <p>
+                            <span>대표:2조</span>
+                            <span>|&nbsp;사업자등록번호 : 000-123-1234</span>
+                            <span>|&nbsp;통신판매신고번호 : 2024-충남천안-1234호</span>
+                        </p>
+                        <p>
+                            <span>사업장:충청남도 천안시 동남구 휴먼교육센터</span>
+                        </p>
+                        <p>
+                            <span>고객센터(평일 09시~17시 30분/점심시간 12시 50분~1시40분)</span>
+                            <span>|&nbsp;전화번호(ARS) : 1234-1234(챗봇&#47;채팅 상담 연결)</span>
+                        </p>
+                    </div>
+                    <div class="social-icons">
+                        <div class="css-img">
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <img src="./icon/youtube.png" alt="youtube">
+                            </a>
+                        </div>
+                        <div class="css-img">
+                            <a href="https://twitter.com/" target="_blank">
+                                <img src="./icon/twitter.png" alt="Twitter">
+                            </a>
+                        </div>
+                        <div class="css-img">
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img src="./icon/instagram.png" alt="Instagram">
+                            </a>
+                        </div>
+                        <div class="css-img">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img src="./icon/facebook.png" alt="Facebook">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="foot-foot">
+                        &copy;HUFLIX corp.ALL RIGHTS RESERVED.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="logoLoad">
+        <div class="logoAnimation">
+            <span class="left"></span>
+            <span class="center"></span>
+            <span class="right"></span>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            setTimeout(removeLoader, 9000);
+        })
+
+        function removeLoader(){
+            var logo = document.getElementById('logoLoad');
+            logo.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+
+    body {
+      font-family: 'Pretendard-Regular';
+      background-color: black;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 1000px;
+      height: 800px;
+    }
+
+    .content-wrap {
+      width: 450px;
+      height: 650px;
+      margin-top: 100px;
+      margin-left: 100px;
+      margin: 100px auto 0 auto;
+    }
+
+    .head {
+      color: #2ee509;
+      font-weight: bold;
+      font-size: 35px;
+      position: absolute;
+      font-size: 30px;
+      top: 10px;
+      margin-left: 30px;
+    }
+
+    .head img {
+      width: 130px;
+    }
+
+    .searchId {
+      text-align: center;
+    }
+
+    .searchId-ment {
+      color: #fff;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .searchEmail {
+      color: #888888;
+      font-weight: bold;
+    }
+
+    .searchEmail input {
+      width: 450px;
+      height: 50px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #212121;
+      box-sizing: border-box;
+      background-color: #212121;
+      font-size: inherit;
+      font-weight: 300;
+      padding-left: 15px;
+      color: #fff;
+    }
+
+    #btnSubmit {
+      width: 450px;
+      height: 50px;
+      margin-top: 20px;
+      color: #a3a3a3;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #4e4e4e;
+    }
+
+    .hr {
+      margin-top: 50px;
+    }
+
+    .hr-sect {
+
+      display: flex;
+      align-items: center;
+      color: #888888;
+      font-size: 11px;
+      margin: 8px 0px;
+    }
+
+    .hr-sect::before,
+    .hr-sect::after {
+      content: "";
+      flex-grow: 1;
+      background: #3e3f40;
+      height: 1px;
+      font-size: 0px;
+      line-height: 0px;
+      margin: 0px 5px;
+
+    }
+
+    .search-me {
+      margin-top: 45px;
+    }
+
+    .search-me div {
+      color: rgb(222, 222, 222);
+    }
+
+    #identityVerificationBtn {
+      margin-top: 20px;
+      width: 450px;
+      height: 50px;
+      background-color: white;
+      border-radius: 5px;
+      color: black;
+      font-weight: bolder;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .footer-wrap {
+      margin: 30px 30px;
+    }
+
+    .footer-ment {
+      color: #a3a3a3;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .copyright-box p {
+      color: #888888;
+      font-size: 11px;
+    }
+
+    .social-icons {
+      display: flex;
+      background-color: black;
+      border-radius: 10px;
+    }
+
+    .css-img img {
+      background-color: #212121;
+      border-radius: 20px;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    .foot-foot {
+      color: #6e6e6e;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    #load {
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+    }
+
+    .rythm {
+      border-radius: 3px;
+      height: 50px;
+      width: 10px;
+      background-color: #2ee509;
+      margin: 0px 3px;
+      animation: rythmAnimation 1s ease-in-out infinite;
+      z-index: 100;
+    }
+
+    @keyframes rythmAnimation {
+      0% {
+        height: 30px;
+      }
+
+      40% {
+        height: 60px;
+      }
+
+      60% {
+        height: 30px;
+      }
+
+      80% {
+        height: 30px;
+      }
+
+      100% {
+        height: 30px;
+      }
+    }
+
+    .rythm:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .rythm:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .rythm:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .rythm:nth-child(5) {
+      animation-delay: 0.4s;
+    }

@@ -1,0 +1,402 @@
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Pretendard-Regular';
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      background-position: center; 
+      background-repeat: no-repeat;
+      backdrop-filter: blur(3px);
+    }
+
+    .container {
+      width: 1200px;
+      height: 950px;
+      
+    }
+
+    .headDiv {
+      width: 300px;
+      height:100px;
+      
+    }
+
+    .head img {
+      width: 10px;
+    }
+
+    /* .head {
+      color: #2ee509;
+      font-weight: bold;
+      font-size: 35px;
+      position: fixed;
+      font-size: 30px;
+      position: absolute;
+      top: 10px;
+      margin-left: 30px;
+    } */
+
+    .mainDiv {
+
+      width: 1200px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5) ),url("../image/poster.JPG");
+      
+    }
+
+    #login-join button {
+      width: 100%;
+      padding: 16px 0;
+      font-size: 1rem;
+      background: #2ee509;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      margin: 25px 0 10px;
+      cursor: pointer;
+    
+    }
+
+    .poster {
+      width: 1300px;
+      height: 800px;
+    }
+
+    .main-ment {
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #main-ment-en1 {
+      font-size: 45px;
+      font-weight: 100;
+      font-weight: bold;
+    }
+
+    #main-ment-en2 {
+      font-size: 25px;
+      font-weight: 100;
+    }
+
+    #main-ment-ko1 {
+      font-size: 45px;
+      font-weight: bold;
+    }
+
+    #main-ment-ko2 {
+      font-size: 25px;
+      font-weight: 100;
+    }
+    #login-join {
+      display: flex;
+      justify-content: space-around;
+      /* width: 300px; */
+      margin-top: 30px;
+    }
+
+    
+    /* .login {
+      width: 100px;
+      height: 30px;
+      color: white;
+      background-color: #2ee509;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 7px;
+      margin-top: 30px;
+    }
+
+    .join {
+      width: 100px;
+      height: 30px;
+      color: white;
+      background-color: #2ee509;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 7px;
+      margin-top: 30px;
+    } */
+
+    #login button,
+    #join button {
+        background-color: rgb(99, 241, 43);
+        border: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 150px;
+        height: 50px;
+    }
+
+
+    #login button:hover,
+    #join button:hover {
+        background-color: #85c54a;
+    }
+
+    .midDiv {
+      width: 1180px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      background-image: radial-gradient(circle, rgb(133,17,47) 20%, rgb(6,14,46) 70%);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: -20px;
+      
+    }
+
+    .midDiv img {
+      width: 50px;
+      height: auto;  
+    }
+    
+    .mid-ment {
+      margin-left: 10px;
+      color: white;
+      font-size: 20px;
+    }
+
+    .footDiv  {
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .footDiv img {
+      width: 830px;
+      height: 320px;
+    }
+
+    /* .footDiv div{
+      color: white;
+      text-align: center;
+      margin-top: 150px;
+      font-weight: bold;
+      font-size: 30px;
+    } */
+
+    #foot-coment-a {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    #foot-coment-b {
+      font-size: 15px;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    .coment {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #coment-baby {
+      font-size: 15px;
+      margin-top: -10px;
+
+    }
+
+    #all-contents {
+      font-size: 29px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    #all-contets-baby  {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    
+    .slide-wrapping {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 80px auto;
+      width: 1000px;
+      height: 150px;
+      overflow: hidden; 
+    }
+
+    .slide-wrapping ul {
+      position: absolute;
+      display: flex;
+      gap: 0 30px;
+      width: max-content;
+      animation: aniScroll 50s linear infinite;
+
+    }
+
+    .slide-wrapping ul.list2 {
+      animation: aniScroll 50s linear infinite;
+    }
+
+    .slide-wrapping ul li {
+      list-style: none;
+      width: 180px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      border: none;
+    }
+
+    .slide-wrapping ul li.a { background-image: url(../image/cryqueen111.jpg); }
+    .slide-wrapping ul li.b { background-image: url(../image/date.png); }
+    .slide-wrapping ul li.c { background-image: url(../image/herry.jpg); }
+    .slide-wrapping ul li.d { background-image: url(../image/inception.jpg); }
+    .slide-wrapping ul li.e { background-image: url(../image/inter.png); }
+    .slide-wrapping ul li.f { background-image: url(../image/noryang.png); }
+    .slide-wrapping ul li.g { background-image: url(../image/sabaha.jpg); }
+    .slide-wrapping ul li.h { background-image: url(../image/uquiz.png); }
+    .slide-wrapping ul li.i { background-image: url(../image/winter.png); }
+    .slide-wrapping ul li.j { background-image: url(../image/mymister.png); }
+
+    @keyframes aniScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes aniScroll-2 {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .footer-wrap {
+      margin: 30px 30px;
+    }
+
+    .footer-ment {
+      color: rgb(222,222,222);
+      font-size: 13px;
+    }
+
+    .copyright-box p {
+      color: #888888;
+      font-size: 11px;
+    }
+
+    .css-img {
+      display: flex;
+    }
+
+    .social-icons {
+      display: flex;
+      background-color: black;
+      border-radius: 10px;
+    }
+
+    .css-img img{
+      background-color: #212121;
+      border-radius: 20px;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    .foot-foot {
+      color: #fff;
+      font-size: 10px;
+    }
+  
+    .head img {
+      width: 150px;
+      height: auto;
+    }
+
+    .lang-select {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+    }
+
+    .lang-select select {
+      background: none;
+      color: white;
+      width: 80px;
+      height: 30px;
+    }
+
+    .lang-select option {
+      background-color: #888888;
+    }
+
+    .player {
+      text-align: center;
+    }
+
+    .player-text-a {
+      object-fit: contain;
+      overflow-clip-margin: content-box;
+      overflow: clip;
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    .player-text-a > div {
+      color: #fff;
+      font-size: 32px;
+      font-weight: bolder;
+      
+    }
+
+    .player-text-b > div{
+      color: #fff;
+      font-size: 17px;
+    }
+
+    .tv-container {
+      margin-top: 50px;
+    }
+
+    .video-img img {
+      width: 100px;
+      height: 50px;
+      position: relative;
+      top: -280px;
+    }
+
+    .tv-container2 {
+      margin-top: 30px;
+    }
+
+    .video-overlay2 video {
+      width: 850px;
+      height: 600px;
+      
+    }
+    

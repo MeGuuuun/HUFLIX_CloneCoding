@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUFLIX :: find-id</title>
+  <link rel="stylesheet" href="./css/find-id.css">
+  <script src="./jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="headDiv">
+      <div class="head">
+        <!--로고 링크 걸기-->
+        <img src="./icon/logo.png">
+      </div>
+    </div>
+    <div class="content-wrap">
+      <div class="searchId">
+        <div class="searchId-ment">
+          아이디 찾기
+        </div>
+      </div>
+      <div class="searchEmail">
+        <br>
+        <br>
+        이메일로 찾기
+        <p>가입 시 등록한 이메일을 입력해주세요.</p>
+        <label for="email" class="input-email">
+          <input type="text" class="email" placeholder="이메일" required>
+        </label>
+
+        <div class="btn-wrap">
+          <button type="button" id="btnSubmit" onclick="location.href='match-id.html'">확인</button>
+        </div>
+        <div class="hr">
+          <div class="hr-sect">또는</div>
+        </div>
+
+        <div class="search-me">
+          <div class="search-me-ment">
+            본인인증으로 찾기
+            <p>이미 본인인증이 완료된 계정에 한하여 아이디 찾기가 가능합니다.</p>
+          </div>
+          <button type="button" id="identityVerificationBtn" class="white-button">본인인증하기</button>
+        </div>
+
+      </div>
+
+      <script>
+        var popBtn = document.getElementById("identityVerificationBtn");
+        popBtn.onclick = function () {
+
+
+          var width = 550;
+          var height = 800;
+
+
+          var left = (screen.width - width) / 2;
+          var top = (screen.height - height) / 2;
+
+
+          window.open("identity.html", "_blank", "width=" + width + ", height=" + height + ", left=" + left + ", top=" + top);
+        }
+      </script>
+
+
+    </div>
+    <hr color="#4d4f4d" width="100%" size="2px">
+    </hr>
+
+    <div class="footer-content">
+      <div class="footer-wrap">
+        <div class="footer-ment">
+          <p>고객센터&ensp;이용약관&ensp;개인정보처리방침&ensp;청소년보호정책&ensp;법적고지</p>
+        </div>
+        <div class="copyright-box">
+          <p>
+            <span>대표:2조</span>
+            <span>|&nbsp;사업자등록번호 : 000-123-1234</span>
+            <span>|&nbsp;통신판매신고번호 : 2024-충남천안-1234호</span>
+          </p>
+          <p>
+            <span>사업장:충청남도 천안시 동남구 휴먼교육센터</span>
+          </p>
+          <p>
+            <span>고객센터(평일 09시~17시 30분/점심시간 12시 50분~1시40분)</span>
+            <span>|&nbsp;전화번호(ARS) : 1234-1234(챗봇&#47;채팅 상담 연결)</span>
+          </p>
+        </div>
+        <div class="social-icons">
+          <div class="css-img">
+            <a href="https://www.youtube.com" target="_blank">
+              <img src="./icon/youtube.png" alt="youtube">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://twitter.com" target="_blank">
+              <img src="./icon/twitter.png" alt="Twitter">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="./icon/instagram.png" alt="Instagram">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="./icon/facebook.png" alt="Facebook">
+            </a>
+          </div>
+        </div>
+        <div class="foot-foot">
+          &copy;HUFLIX corp.ALL RIGHTS RESERVED.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUFLIX :: match-id</title>
+  <link rel="stylesheet" href="./css/match-id.css">
+  <script src="./jquery-1.11.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="headDiv">
+      <!--휴플릭스 로고이미지-->
+      <div class="head">
+        <img src="./icon/logo.png">
+      </div>
+    </div>
+    <div class="content-wrap">
+      <div class="center-icon">
+        <img src="./icon/check.png">
+      </div>
+        <div class="searchId">
+          <div class="searchId-ment">
+            <div class="searchId-ment-a">
+              입력하신 정보와 일치하는 결과입니다.
+            </div>
+            <div class="searchId-ment-b">
+              개인정보 보호를 위해<br>
+              아이디 또는 이메일의 일부만 제공합니다.
+            </div>
+          </div>
+        </div>
+        <div class="id-inputBox">
+          <div class="id-inputBox-a">
+            <div class="image-wrapper">
+              <img src="./icon/cj.png">
+            </div>
+            <div class="text-wrapper">
+              <p class="one" style="color: #a3a3a3;">DJ ONE</p>
+              <p class="two">human***</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="input-info">
+          ※ SNS 회원은 해당 SNS 아이디가 아닌 휴플렉스 가입 시 등록한 이메일을 알려드립니다.
+        </p>
+
+        <!--버튼-->
+        <div class="btn-wrap">
+          <button class="btn-login" onclick="location.href='login.html'">
+            <p>로그인 하러 가기</p>
+          </button>
+        </div>
+      </div>
+
+
+
+  <hr color="#4d4f4d" width="100%" size="2px"></hr>
+
+    <div class="footer-content">
+      <div class="footer-wrap">
+        <div class="footer-ment">
+          <p>고객센터&ensp;이용약관&ensp;개인정보처리방침&ensp;청소년보호정책&ensp;법적고지</p>
+        </div>
+        <div class="copyright-box">
+          <p>
+            <span>대표:2조</span>
+            <span>|&nbsp;사업자등록번호 : 000-123-1234</span>
+            <span>|&nbsp;통신판매신고번호 : 2024-충남천안-1234호</span>
+          </p>
+          <p>
+            <span>사업장:충청남도 천안시 동남구 휴먼교육센터</span>
+          </p>
+          <p>
+            <span>고객센터(평일 09시~17시 30분/점심시간 12시 50분~1시40분)</span>
+            <span>|&nbsp;전화번호(ARS) : 1234-1234(챗봇&#47;채팅 상담 연결)</span>
+          </p>
+        </div>
+        <div class="social-icons">
+          <div class="css-img">
+            <a href="https://www.youtube.com" target="_blank">
+              <img src="./icon/youtube.png" alt="youtube">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://twitter.com" target="_blank">
+              <img src="./icon/twitter.png" alt="Twitter">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="./icon/instagram.png" alt="Instagram">
+            </a>
+          </div>
+          <div class="css-img">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="./icon/facebook.png" alt="Facebook">
+            </a>
+          </div>
+        </div>
+        <div class="foot-foot">
+          &copy;HUFLIX corp.ALL RIGHTS RESERVED.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="load">
+    <div class="rythm"></div>
+    <div class="rythm"></div>
+    <div class="rythm"></div>
+    <div class="rythm"></div>
+    <div class="rythm"></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        setTimeout(removeLoader, 2000);
+    })
+
+    function removeLoader(){
+        var load = document.getElementById('load');
+        $('#load').fadeOut();
+        $('#load').style.display = none;
+    }
+</script>
+
+</body>
+</html>

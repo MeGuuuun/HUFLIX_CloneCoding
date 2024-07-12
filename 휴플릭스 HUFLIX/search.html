@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/search.css" type="text/css">
+    <title>HUFLIX :: search</title>
+    <script src="./jquery-1.11.0.min.js"></script>
+    <script>
+        var movieArray = [
+            ["듄2", "./image/dune2.jpg"],
+            ["웡카", "./image/wonka.jpg"],
+            ["고스트 버스터즈", "./image/ghostBusters.jpg"],
+            ["고질라 vs 콩", "./image/godzilla.jpg"],
+            ["인사이드 아웃 2", "./image/insideout.jpg"],
+            ["오펜하이머", "./image/oppenheimer.jpg"],
+            ["알라딘", "./image/aladin.jpg"],
+            ["아쿠아맨2", "./image/aquaman.jpg"],
+            ["분노의 질주", "./image/fastFurious.jpg"],
+            ["미션 임파서블 : 데드 레코닝", "./image/missionImpossible.jpg"],
+            ["스파이더맨 어크로스 더 유니버스", "./image/spiderVerse.jpg"],
+            ["수퍼 소닉", "./image/sonic.jpg"],
+            ["수퍼 마리오", "./image/superMario.jpg"],
+            ["위키드", "./image/wicked.jpg"],
+            ["핀과 제이크의 어드벤처 타임", "./image/adventureTime.jpg"],
+            ["오징어 게임", "./image/squidGame.jpg"],
+            ["007 : 노 타임 투 다이", "./image/007.jpg"]
+        ]
+
+
+        function findMovie() {
+            var $input = $("#searchInput").val();
+            var img = document.getElementById("resultImg");
+            var title = document.getElementById("resultTitle");
+            var label = document.getElementById("resultLabel");
+            img.src = "";
+            title.innerText = "";
+            label.style.display = "none";
+            var tag = false;
+
+            if ($input.length == 0) {
+                label.style.display = "block";
+                return;
+            }
+
+            for (var i = 0; i < movieArray.length; i++) {
+                if (movieArray[i][0].includes($input)) {
+                    img.src = movieArray[i][1];
+                    title.innerText = movieArray[i][0];
+                    tag = true;
+                    return;
+                }
+            }
+
+            if (tag == false) {
+                label.style.display = "block";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="navBar">
+            <div id="navLeft">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="./icon/logo.png">
+                    </a>
+                </div>
+            </div>
+            <div id="navRight">
+                <div id="searchDiv">
+                    <input type="text" id="searchInput" placeholder="영화 제목, 배우, 감독 검색" autocomplete="off" required>
+                </div>
+                <div id="searchBtn" onclick="findMovie()">
+                    <img src="./icon/search.png">
+                    <label>검색</label>
+                </div>
+            </div>
+        </div>
+        <div id="mainScreen">
+            <h1>검색 결과 : </h1>
+            <img id="resultImg">
+            <label id="resultTitle"></label>
+            <label id="resultLabel">검색 결과를 찾을 수 없습니다.</label>
+        </div>
+        <div id="footer">
+            <div class="footer-content">
+                <div class="footer-wrap">
+                    <div class="footer-ment">
+                        <p>고객센터&ensp;이용약관&ensp;개인정보처리방침&ensp;청소년보호정책&ensp;법적고지</p>
+                    </div>
+                    <div class="copyright-box">
+                        <p>
+                            <span>대표:2조</span>
+                            <span>|&nbsp;사업자등록번호 : 000-123-1234</span>
+                            <span>|&nbsp;통신판매신고번호 : 2024-충남천안-1234호</span>
+                        </p>
+                        <p>
+                            <span>사업장:충청남도 천안시 동남구 휴먼교육센터</span>
+                        </p>
+                        <p>
+                            <span>고객센터(평일 09시~17시 30분/점심시간 12시 50분~1시40분)</span>
+                            <span>|&nbsp;전화번호(ARS) : 1234-1234(챗봇&#47;채팅 상담 연결)</span>
+                        </p>
+                    </div>
+                    <div class="social-icons">
+                        <div class="css-img">
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <img src="./icon/youtube.png" alt="youtube">
+                            </a>
+                        </div>
+                        <div class="css-img">
+                            <a href="https://twitter.com/" target="_blank">
+                                <img src="./icon/twitter.png" alt="Twitter">
+                            </a>
+                        </div>
+                        <div class="css-img">
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img src="./icon/instagram.png" alt="Instagram">
+                            </a>
+                        </div>
+                        <div class="css-img">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img src="./icon/facebook.png" alt="Facebook">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="foot-foot">
+                        &copy;HUFLIX corp.ALL RIGHTS RESERVED.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="load">
+        <div class="rythm"></div>
+        <div class="rythm"></div>
+        <div class="rythm"></div>
+        <div class="rythm"></div>
+        <div class="rythm"></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            setTimeout(removeLoader, 2000);
+        })
+
+        function removeLoader(){
+            var load = document.getElementById('load');
+            $('#load').fadeOut();
+            $('#load').style.display = none;
+        }
+    </script>
+</body>
+
+</html>

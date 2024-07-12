@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" charset="utf-8">
+        <link rel="stylesheet" href="./css/profile.css">
+        <title>HUFLIX :: profile</title>
+
+        <script src="./jquery-1.11.0.min.js"></script>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <div>
+                <header>
+                    <div class="lang-select">
+                        <select onchange="changeLanguage()" id="language-select">
+                          <option value="ko" selected>한국어</option>
+                          <option value="en">English</option>
+                        </select>
+                    </div>
+                    <div class="navbar">
+                            <a href=""><img src="icon/logo.png"></a>
+                    </div>
+                </header>
+            </div>
+            <div class="title2">
+                <div class="engTitle2">
+                    <div id="player-text-a-en" class="en" style="display:none;">Choose a profile to watch Netflix.</div>
+                </div>
+                <div class="koTitle2">
+                    <div id="player-text-a-ko" class="ko">넷플릭스를 시청할 프로필을 선택하세요.</div>
+                </div>
+            </div>
+            <div>
+                <div id="player-text-a-en" class="en" style="display:none;">
+                    <div class="one">
+                        <div>
+                            <a href="index.html"><img src="icon/profile.png"></a>
+                            <div class="text">Park</div>
+                        </div>
+                        <div>
+                            <img src="icon/profile2.png">
+                            <div class="text">Lee</div>
+                        </div>
+                        <div>
+                            <img src="icon/profile3.png">
+                            <div class="text">Ban</div>
+                        </div>
+                        <div>
+                            <img src="icon/profile4.png">
+                            <div class="text">Inst</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="player-text-a-ko" class="ko">
+                    <div class="one">
+                        <div>
+                            <!-- icon 박지민을 누르면 메인페이지로 이동 -->
+                            <a href="index.html"><img src="icon/profile.png"></a>
+                            <div class="text">박지민</div>
+                        </div>
+                        <div>
+                            <img src="icon/profile2.png">
+                            <div class="text">이경민</div>
+                        </div>
+                        <div>
+                            <img src="icon/profile3.png">
+                            <div class="text">반재홍</div>
+                        </div>
+                        <div>
+                            <img src="icon/profile4.png">
+                            <div class="text">강사님</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="player-text-a-en" class="en" style="display:none;">
+                    <a href="profile.html"><button class="button2">Manage Profiles</button></a>
+                </div>
+                <div id="player-text-a-ko" class="ko"><a href="profile.html"><button class="button2">프로필 관리</button></a></div>
+            </div>
+                  
+
+
+            <script>
+                function changeLanguage() {
+                    var selectedLanguage = document.getElementById("language-select").value;
+                    var enElements = document.querySelectorAll('.ko');
+                    var koElements = document.querySelectorAll('.en');
+
+                    if (selectedLanguage === "ko") {
+                        enElements.forEach(function(element) {
+                        element.style.display = 'block';
+                        });
+
+                        koElements.forEach(function(element) {
+                        element.style.display = 'none';
+                        });
+
+                    } else if (selectedLanguage === "en") {
+
+                        enElements.forEach(function(element) {
+                        element.style.display = 'none';
+                        });
+
+                        koElements.forEach(function(element) {
+                        element.style.display = 'block';
+                        });
+                    }
+                }
+            </script>
+
+
+        </div>
+    
+            
+        
+
+    </body>
+</html>

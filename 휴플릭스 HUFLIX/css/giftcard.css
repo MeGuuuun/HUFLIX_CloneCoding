@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    font-family: 'Pretendard-Regular';
+}
+
+div.content{
+    width: 1000px;
+
+}
+div.poster{
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)), url("../image/poster.jpg");
+    background-position: center;
+}
+
+.navbar{
+    position: relative;
+    width: 1000px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-select {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+
+.lang-select select {
+    background: none;
+    color: white;
+    width: 80px;
+    height: 30px;
+}
+
+.lang-select option {
+    background-color: #888888;
+}
+
+.logo img {
+    width: 180px;
+    height: 80px;
+    margin-left: 10%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.logout {
+    width:100px;
+    height:40px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    background-color:#2ee509;
+    margin-top: 30px;
+    margin-right: 5px;
+    justify-content: space-around;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.use {
+    width:150px;
+    height:50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border: 0;
+    background-color:#2ee509;
+    margin-right: 5px;
+    justify-content: space-around;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.program{
+    color: white;
+    display: flex;
+    height: 400px;
+    
+}
+
+.info{
+    color: white;
+    margin-left: 30px;
+    height: 250px;
+   
+}
+
+input[type="text"] {
+    width: 250px;
+    height: 35px;
+    display: block;
+    border: 1px solid lightgray;
+    color: lightgray;
+    background-color: black;
+    font-size: 12px;
+    margin-left: 0px;
+}
+
+.info2{
+    color: white;
+    margin-left: 30px;
+    height: 250px;
+}
+
+a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.a1{
+    color: aqua;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.a2{
+    color: white;
+}
+
+.footer-wrap {
+    margin: 30px 30px;
+}
+
+.footer-ment {
+    color: rgb(222,222,222);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.copyright-box p {
+    color: #888888;
+    font-size: 11px;
+}
+
+.css-img {
+    display: flex;
+}
+
+.social-icons {
+    display: flex;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.css-img img{
+    background-color: #212121;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.foot-foot {
+    color: #fff;
+    font-size: 10px;
+}

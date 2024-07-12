@@ -1,0 +1,92 @@
+body {
+  width: 100%; 
+}
+
+.container {
+  width: 600px;
+  height: 800px;
+}
+
+
+.head-image  {
+  text-align: center;
+  background-color: #f8f8f8;
+  width: 510px;
+}
+
+.head-comment {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.input-check-head  {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input-check-comment {
+  display: inline-block;
+  font-size: 13px;
+  color: #666666;
+  margin-top: 20px;
+}
+
+.input-check-first input:nth-child(2) {
+  font-size: 13px;
+  margin-left: 176px;
+}
+
+.input-check-second input:nth-child(2) {
+  font-size: 13px;
+  margin-left: 150px;
+}
+
+.input-check-first,
+    .input-check-second {
+      text-decoration: underline;
+}
+
+
+.footer {
+  margin-top: 20px;
+}
+
+
+.footer-pass button {
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  background-color: #e9e9e9;
+  border-radius: 5px;
+  border: 1px solid none;
+  cursor: pointer;
+  color: #666666;
+  font-size: 15px;
+  
+}
+
+.footer-sms button {
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  background-color: #e9e9e9;
+  border-radius: 5px;
+  /* border: 1px solid none; */
+  margin-top: 10px;
+  cursor: pointer;
+  color: #666666;
+  font-size: 15px;
+  
+}
+
+
+
+.footBar {
+  margin-top: 70px;
+  
+}
+
+.footBar img {
+  width: 550px;
+  
+}
